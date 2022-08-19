@@ -12,19 +12,23 @@
             }
             #content{
                 background-color: darkseagreen;
-                width: 80%;
+                width: 90%;
+                max-width: 600px;
                 margin: auto;
                 text-align: center;
-                
+                border-radius: 10px;
             }
         </style>
     </head>
     <body>
         <div id="content">
-            <h1 style="margin-top: 28px;">Guess the Number!</h1>
+            <h1>Guess the Number!</h1>
             <input id="guess" type="number" value="" placeholder="Enter a number between 0 and 100!" style="width: 250px; text-align: center;">
             <button onclick="checkNumber();">Submit!</button>
             <h3 id="answer">Submit your first guess!</h3>
+            <button onclick="window.location.reload();">Restart Game</button>
+            <br>
+            <a href="https://github.com/manolol1/number-guessing.js" target="_blank"><button style="margin-top: 2px; margin-bottom: 10px;">View Sourcecode on Github</button></a>
         </div>
 
         <script>
@@ -69,7 +73,6 @@
 
                     }
                 }
-
             }
         </script>
     </body>
