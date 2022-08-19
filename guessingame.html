@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Number-Guessing</title>
+        <style>
+            body{
+                font-family: Arial;
+                background-color: darkolivegreen;
+            }
+            #content{
+                background-color: darkseagreen;
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h1 style="margin-top: 28px;">Guess the Number!</h1>
+            <input id="guess" type="number" value="" placeholder="Enter a number between 0 and 100!" style="width: 250px; text-align: center;">
+            <button onclick="checkNumber();">Submit!</button>
+            <h3 id="answer">Submit your first guess!</h3>
+        </div>
 
+        <script>
+            let correctNumber = Math.floor(Math.random() * 100);
+            let guessedNumber = 0;
+            let answer = document.getElementById("answer");
+            let attempts = 0;
+
+            function checkNumber() {
+                guessedNumber = document.getElementById("guess").value;
+
+                if(guessedNumber < 0 || guessedNumber > 100){
+                    answer.innerHTML = "Please only enter numbers between 0 and 100!"
+                } else{
+                    attempts ++;
+                    if(guessedNumber == correctNumber){
+                        if(attempts == 1){
+                            answer.innerHTML = `Congrats! You guessed the number correctly. It took you only one attempt. How is this even possible!?`;
+                        } else if(attempts < 5){
+                            answer.innerHTML = `Congrats! You guessed the number correctly. It took you only ${attempts} attempts. You must be very lucky.`;
+                        } else{
+                            answer.innerHTML = `Congrats! You guessed the number correctly! It took you ${attempts} attempts.`;
+                        }
+                    } else{
+
+                        let stringAfterAttemptCount = "th";
+                        if(attempts == 1){
+                            stringAfterAttemptCount = "st";
+                        } else if(attempts == 2){
+                            stringAfterAttemptCount = "nd";
+                        } else if(attempts == 3){
+                            stringAfterAttemptCount = "rd";
+                        } else{
+                            stringAfterAttemptCount = "th";
+                        };
+
+                        if(attempts == 1){
+                            answer.innerHTML = `That's wrong. Try again! This was your ${attempts}${stringAfterAttemptCount} attempt.`;
+                        } else{
+                            answer.innerHTML = `That's wrong again! This was your ${attempts}${stringAfterAttemptCount} attempt.`;
+                        }
+
+                    }
+                }
+
+            }
+        </script>
+    </body>
+</html>
