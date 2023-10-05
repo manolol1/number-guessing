@@ -11,18 +11,34 @@
                 background-color: darkolivegreen;
             }
             #content{
-                background-color: darkseagreen;
+                background-color: rgb(108, 139, 54);
                 width: 90%;
-                max-width: 600px;
+                max-width: 500px;
                 margin: auto;
                 text-align: center;
                 border-radius: 10px;
+            }
+            button{
+                background-color: rgb(135, 170, 75);
+                border-width: 1px;
+                border-radius: 8px;
+                border-color: darkolivegreen;
+            }
+            input{
+                background-color: rgb(135, 170, 75);
+                border-width: 1px;
+                border-radius: 8px;
+                border-color: darkolivegreen;
+            }
+            ::placeholder{
+                color: rgb(44, 44, 44);
+                opacity: 1;
             }
         </style>
     </head>
     <body>
         <div id="content">
-            <h1>Guess the Number!</h1>
+            <h1 style="padding-top: 8px; margin-top: 30px;">Guess the Number!</h1>
             <input id="guess" type="number" value="" placeholder="Enter a number between 0 and 100!" style="width: 250px; text-align: center;">
             <button onclick="checkNumber();">Submit!</button>
             <h3 id="answer">Submit your first guess!</h3>
