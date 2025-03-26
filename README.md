@@ -1,3 +1,5 @@
+# This repository was moved to https://forgejo.manolol.xyz/mario/number-guessing
+
 # number-guessing
 A simple number-guessing game, made in JavaScript (and of course HTML and CSS).
 
